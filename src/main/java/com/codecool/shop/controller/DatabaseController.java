@@ -10,7 +10,7 @@ import java.sql.SQLException;
 public class DatabaseController {
 
 
-    private String DATABASE = "jdbc:postgresql://localhost:5432/codecoolshop";
+    private String DATABASE = "jdbc:postgresql://192.168.100.14:5400/codecoolshop";
     private String DB_USER = System.getenv("DB_USER");
     private String DB_PASSWORD = System.getenv("DB_PASSWORD");
     private static final Logger logger = LoggerFactory.getLogger(DatabaseController.class);
@@ -24,6 +24,8 @@ public class DatabaseController {
     }
 
     public Connection getConnection() {
+        System.out.println(DB_USER);
+        System.out.println(DB_PASSWORD);
         try {
             logger.info("Connection created successfully");
             return DriverManager.getConnection(
